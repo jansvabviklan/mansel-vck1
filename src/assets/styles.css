@@ -1,0 +1,221 @@
+
+.mansel-vck-nadpis1 {
+	font-size: 20px;
+	font-weight: bold;	
+}
+
+.mansel-vck-nadpis2 {
+	font-size: 16px;
+  text-decoration: underline;
+	font-weight: 900;	
+}
+
+.mansel-vck-nadpis3 {
+	font-size: 14px;
+	font-weight: bold;	
+}
+
+.mansel-vck-nadpis_pozn1 {
+	font-size: 14px;
+	font-weight: normal;	
+}
+
+/*
+.mansel-vck-jednotky-bg {
+    background-color: #607d8b !important;
+    border-color: #607d8b;
+}
+.mansel-vck-jednotky-text {
+    color: #000000;
+    caret-color: #000000;
+}*/
+  
+
+
+.mansel-vck-header-bg {
+    background-color: #1976d2 ;
+    border-color: #1976d2;
+}
+.mansel-vck-header-text {
+    color: #FFFFFF;
+    caret-color: #FFFFFF;
+}
+
+
+
+
+.mansel-vck-info-vstupy-bg {
+    background-color: #fff9c4 !important;
+    border-color: #fff9c4;
+}
+.mansel-vck-info-vstupy-text  {
+    color: #263238 !important;
+    caret-color: #263238;
+}  
+/*
+.mansel-vck-seznam-vstupy-bg {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.mansel-vck-seznam-vstupy-text {
+    color: #000000;
+    caret-color: #000000;
+}
+
+.mansel-vck-mminput-vstupy-bg {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.mansel-vck-mminput-vstupy-text {
+    color: #000000;
+    caret-color: #000000;
+}
+.mansel-vck-mminput-vstupy-meze-text {
+    color: #000000;
+    caret-color: #000000;
+}
+
+
+.mansel-vck-input-vstupy-bg {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.mansel-vck-input-vstupy-text {
+    color: #000000;
+    caret-color: #000000;
+}*/
+
+
+
+.mansel-vck-tabulka-selcell-bg {
+    background-color: #1976d2 !important;
+    border-color: #1976d2;
+}
+.mansel-vck-tabulka-selcell-text--text {
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+.mansel-vck-tabulka-cell-bg {
+  background-color: #ffffff !important;
+  border-color: #ffffff;
+}
+.mansel-vck-tabulka-cell-text--text {
+  color: #263238 !important;
+  caret-color: #263238 !important;
+}
+
+
+.mansel-vck-progress-symbol--text  {
+  color: #0d47a1 !important;
+}
+
+.mansel-vck-progress-panel-bg {
+  background-color: #ffffff !important;
+}
+
+
+
+.mansel-vck-pnlHorni {
+  padding: 5px;
+}
+
+.mansel-vck-vstup-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 5px;
+  
+  }
+  
+  .mansel-vck-vstup-popis {
+    padding-bottom: 0px;
+    font-weight: bold;
+    max-width: 200px;
+    min-width:200px;
+  
+    line-height: 25px;
+    vertical-align: middle;
+  }
+
+  .mansel-vck-vstup-popis-info-right {
+    padding-bottom: 0px;
+    padding-left: 10px;
+    font-weight: bold;
+    line-height: 25px;
+    vertical-align: bottom;
+    flex: 1;
+    display: flex;
+ }
+
+ .mansel-vck-vstup-popis-info-right-text {
+    line-height:20px; margin: auto 0 auto;
+ }
+  
+  .mansel-vck-vstup-hodnota {
+    flex: 1;
+    display: flex;
+  }
+  
+  
+  .mansel-vck-vstup-right {
+    width: 100%;
+  }
+
+  .mansel-vck-vstup-right-auto {
+    width: auto;
+  }
+  
+  .mansel-vck-vstup-units {
+    width: 135px;
+    padding-right: 10px;
+    min-width: 135px;
+    max-width: 135px;
+  }
+
+  .mansel-vck-vstup-units-readonly {
+    width: 135px;
+    text-align: center;
+    line-height: 25px;
+    padding-right: 10px;
+    min-width: 135px;
+    max-width: 135px;
+  }
+  
+  .mansel-vck-vstup-right .v-input--is-focused   {
+    /*border: 2px solid #0d47a1;*/
+  }
+
+  .mansel-vck-vstup-units .v-input--is-focused
+  {
+    /*border: 2px solid black;*/
+  }
+
+  @media (max-width: 600px) {
+    .mansel-vck-vstup-popis {
+      flex: 1;
+      padding-bottom: 0px;
+      font-weight: bold;
+    }
+  
+    .mansel-vck-vstup-container {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 680px) {
+  
+    .vstup-container-info {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+  
+
+  
+/*
+  .tabulator  {
+    border: 1px solid gray; 
+  }
+*/ 
