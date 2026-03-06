@@ -37146,7 +37146,7 @@ const VDialog_baseMixins = mixins(dependent, detachable, overlayable, returnable
 
 
 /* harmony default export */ var VSpacer = (createSimpleFunctional('spacer', 'div', 'v-spacer'));
-;// CONCATENATED MODULE: ./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[4]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=template&id=093edac0&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[4]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=template&id=49ed4a1d&scoped=true&
 
 
 
@@ -37239,12 +37239,32 @@ var render = function render() {
       "ValueChanged": _vm.handleValueChanged
     }
   }), _c('ManselPanelVstupu', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.bPanel5Tabulka,
+      expression: "bPanel5Tabulka"
+    }],
     attrs: {
       "dataVstupy": _vm.dataTabulky
     },
     on: {
       "ValueChanged": _vm.handleValueChanged,
       "CellDoubleClicked": _vm.handleCellDoubleClicked
+    }
+  }), _c('ManselPanelVstupu', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.bPanel6,
+      expression: "bPanel6"
+    }],
+    attrs: {
+      "dataVstupy": _vm.dataPanel6,
+      "bTabulkaHlucnosti": true
+    },
+    on: {
+      "ValueChanged": _vm.handleValueChanged
     }
   })], 1)]), _c(VOverlay, {
     attrs: {
@@ -48841,6 +48861,7 @@ var ManselPanelVstupu_component = normalizeComponent(
       dataVstupy: null,
       dataVystupy: null,
       dataHlucnost: null,
+      dataPanel6: null,
       dataTabulky: null,
       vystupniParametry: null,
       nadpis: "",
@@ -48849,6 +48870,8 @@ var ManselPanelVstupu_component = normalizeComponent(
       bInit: true,
       chyba: "",
       bHlucnost: false,
+      bPanel6: false,
+      bPanel5Tabulka: true,
       fullscreenClass: {
         "mansel-vck-fullscreen": false
       },
@@ -48927,8 +48950,11 @@ var ManselPanelVstupu_component = normalizeComponent(
           this.dataVystupy = data.data[2];
           this.dataHlucnost = data.data[3];
           this.dataTabulky = data.data[5];
+          this.dataPanel6 = data.data[6] ? data.data[6] : [];
           this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
-          this.bHlucnost = data.data.MASKA === "2";
+          this.bHlucnost = data.data.MASKA === "2" || data.data.MASKA === "3";
+          this.bPanel6 = data.data.MASKA === "3" && this.dataPanel6.length > 0;
+          this.bPanel5Tabulka = this.dataTabulky && this.dataTabulky.length > 0;
           this.nadpis = data.data.PRODUKT;
           this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
           if (doubleClickOrigin) this.$emit('cellDoubleClickedEvent', data.data.VYSTUPNI_PARAMETRY);
@@ -48992,8 +49018,11 @@ var ManselPanelVstupu_component = normalizeComponent(
           this.dataVystupy = data.data[2];
           this.dataHlucnost = data.data[3];
           this.dataTabulky = data.data[5];
+          this.dataPanel6 = data.data[6] ? data.data[6] : [];
           this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
-          this.bHlucnost = data.data.MASKA === "2";
+          this.bHlucnost = data.data.MASKA === "2" || data.data.MASKA === "3";
+          this.bPanel6 = data.data.MASKA === "3";
+          this.bPanel5Tabulka = this.dataTabulky && this.dataTabulky.length > 0;
           this.nadpis = data.data.NADPIS;
           this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
         } else {
@@ -49029,8 +49058,11 @@ var ManselPanelVstupu_component = normalizeComponent(
           this.dataVystupy = data.data[2];
           this.dataHlucnost = data.data[3];
           this.dataTabulky = data.data[5];
+          this.dataPanel6 = data.data[6] ? data.data[6] : [];
           this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
-          this.bHlucnost = data.data.MASKA === "2";
+          this.bHlucnost = data.data.MASKA === "2" || data.data.MASKA === "3";
+          this.bPanel6 = data.data.MASKA === "3" && this.dataPanel6.length > 0;
+          this.bPanel5Tabulka = this.dataTabulky && this.dataTabulky.length > 0;
           this.nadpis = data.data.NADPIS;
           this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
           if (data.varovani != "") {
@@ -49103,15 +49135,15 @@ var ManselPanelVstupu_component = normalizeComponent(
 });
 ;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_ManselVCK1vue_type_script_lang_js_ = (ManselVCK1vue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=style&index=0&id=093edac0&prod&lang=css&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=style&index=0&id=49ed4a1d&prod&lang=css&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue?vue&type=style&index=0&id=093edac0&prod&lang=css&
+;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue?vue&type=style&index=0&id=49ed4a1d&prod&lang=css&
 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=style&index=1&id=093edac0&prod&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/ManselVCK1.vue?vue&type=style&index=1&id=49ed4a1d&prod&scoped=true&lang=css&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue?vue&type=style&index=1&id=093edac0&prod&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue?vue&type=style&index=1&id=49ed4a1d&prod&scoped=true&lang=css&
 
 ;// CONCATENATED MODULE: ./src/components/ManselVCK1.vue
 
@@ -49129,7 +49161,7 @@ var ManselVCK1_component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "093edac0",
+  "49ed4a1d",
   null
   
 )

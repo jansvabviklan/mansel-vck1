@@ -68,6 +68,15 @@
       NDM
       </v-btn>
 
+            <v-btn
+        text
+        @click="changeProduct"
+        value="JSRZ001YER2026tA00RDTMV"
+      >
+      RDMTV
+      </v-btn>
+      
+
 
 
       <v-select class="v-select__vck1"
@@ -110,7 +119,7 @@
       <div style="height: 30px;"></div>
 
 
-      <ManselVCK1 ref="manselKomp" :produkt="produktSel" jazyk="CJ" v-on:reloadDataEvent="reloadDataEvent" v-on:cellDoubleClickedEvent="cellDoubleClicked" sirkaInfoVstupyRedukovana="300" url="https://www.viklan.cz/cadkonfserver-connector-v2.php/produkt-query/" /> <!--   https://www.viklan.cz/cadkonfserver-connector-v2.php/produkt-query/     http://localhost:6010/produkt-query/       https://www.viklan-online-mansel.cloud/produkt-query/         https://www.viklan.cz/cadkonfserver-connector-v2.php/produkt-query/      -->
+      <ManselVCK1 ref="manselKomp" :produkt="produktSel" jazyk="CJ" v-on:reloadDataEvent="reloadDataEvent" v-on:cellDoubleClickedEvent="cellDoubleClicked" sirkaInfoVstupyRedukovana="300" url="http://localhost:6010/produkt-query/" /> <!--   https://www.viklan.cz/cadkonfserver-connector-v2.php/produkt-query/     http://localhost:6010/produkt-query/       https://www.viklan-online-mansel.cloud/produkt-query/         https://www.viklan.cz/cadkonfserver-connector-v2.php/produkt-query/      -->
 
     </v-main>
   </v-app>

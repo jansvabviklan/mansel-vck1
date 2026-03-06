@@ -46,6 +46,14 @@
               :dataVstupy="dataTabulky"
               v-on:ValueChanged="handleValueChanged"
               v-on:CellDoubleClicked="handleCellDoubleClicked"
+              v-show="bPanel5Tabulka"
+            />
+
+            <ManselPanelVstupu
+              :dataVstupy="dataPanel6"
+              v-on:ValueChanged="handleValueChanged"
+              v-bind:bTabulkaHlucnosti="true"
+              v-show="bPanel6"
             />
           </div>
         </div>
@@ -137,6 +145,7 @@ export default {
       dataVstupy: null,
       dataVystupy: null,
       dataHlucnost: null,
+      dataPanel6: null,
       dataTabulky: null,
       vystupniParametry: null,
       nadpis: "",
@@ -145,6 +154,8 @@ export default {
       bInit: true,
       chyba: "",
       bHlucnost: false,
+      bPanel6: false,
+      bPanel5Tabulka: true,
       fullscreenClass: {"mansel-vck-fullscreen" : false},
       btnRezimZobrazeniClass: {"mansel-vck-btn-rezim-fullscreen" : true, "mansel-vck-btn-rezim-shrink" : false}
     };
@@ -241,14 +252,18 @@ export default {
           this.bInit = false;
 
           if (data.res == "ok") {
+
             this.dataVstupy = data.data[1];
             this.dataVystupy = data.data[2];
             this.dataHlucnost = data.data[3];
             this.dataTabulky = data.data[5];
+            this.dataPanel6 = data.data[6] ? data.data[6] : [];
             this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
 
-            this.bHlucnost = (data.data.MASKA === "2");
-            
+            this.bHlucnost = (data.data.MASKA === "2" || data.data.MASKA === "3");
+            this.bPanel6 = (data.data.MASKA === "3" && this.dataPanel6.length > 0);
+            this.bPanel5Tabulka = (this.dataTabulky && this.dataTabulky.length > 0);
+
             this.nadpis = data.data.PRODUKT;
             this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
 
@@ -332,10 +347,13 @@ export default {
             this.dataVystupy = data.data[2];
             this.dataHlucnost = data.data[3];
             this.dataTabulky = data.data[5];
+            this.dataPanel6 = data.data[6] ? data.data[6] : [];
             this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
 
-            this.bHlucnost = (data.data.MASKA === "2");
-            
+            this.bHlucnost = (data.data.MASKA === "2" || data.data.MASKA === "3");
+            this.bPanel6 = (data.data.MASKA === "3");
+            this.bPanel5Tabulka = (this.dataTabulky && this.dataTabulky.length > 0);
+
             this.nadpis = data.data.NADPIS;
             this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
           } else {
@@ -380,10 +398,13 @@ export default {
             this.dataVystupy = data.data[2];
             this.dataHlucnost = data.data[3];
             this.dataTabulky = data.data[5];
+            this.dataPanel6 = data.data[6] ? data.data[6] : [];
             this.vystupniParametry = data.data.VYSTUPNI_PARAMETRY;
 
-            this.bHlucnost = (data.data.MASKA === "2");
-            
+            this.bHlucnost = (data.data.MASKA === "2" || data.data.MASKA === "3");
+            this.bPanel6 = (data.data.MASKA === "3" && this.dataPanel6.length > 0);
+            this.bPanel5Tabulka = (this.dataTabulky && this.dataTabulky.length > 0);
+
             this.nadpis = data.data.NADPIS;
             this.$emit('reloadDataEvent', data.data.VYSTUPNI_PARAMETRY);
 

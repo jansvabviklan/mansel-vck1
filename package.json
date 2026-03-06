@@ -9,7 +9,7 @@
     "name": "VIKLAN SOFTWARE s.r.o.",
     "email": "info@viklan.cz"
   },
-  "version": "1.2601.2",
+  "version": "1.2603.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
